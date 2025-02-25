@@ -4,13 +4,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.BlogApplication.Dto.UserDto;
 import com.BlogApplication.exception.*;
 import com.BlogApplication.entity.User;
 
 import com.BlogApplication.repository.UserRepo;
 import com.BlogApplication.service.UserService;
-
+@Service
 public class UserServiceImpl implements UserService
 {
 	@Autowired
@@ -77,14 +79,14 @@ public class UserServiceImpl implements UserService
 	 }
 	 
 	 public UserDto userToDto(User user) {
-		 UserDto.userDto = new UserDto();
-		 user.setId(user.getId());
-		 user.setName(user.getName());
-		 user.setEmail(user.getEmail());
-		 user.setPassword(user.getPassword());
-		 user.setAbout(user.getAbout());
-		return userToDto(user);
-		 
-	 }
+		    UserDto userDto = new UserDto();
+		    userDto.setId(user.getId());
+		    userDto.setName(user.getName());
+		    userDto.setEmail(user.getEmail());
+		    userDto.setPassword(user.getPassword());
+		    userDto.setAbout(user.getAbout());
+		    return userDto;
+		}
+
 
 }

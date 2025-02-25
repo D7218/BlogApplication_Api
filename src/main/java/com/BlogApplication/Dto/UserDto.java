@@ -9,7 +9,8 @@ import lombok.Setter;
 @Getter
 public class UserDto {   // UserDto class hum data transfer karne ke liye use karenge
 	
- public static UserDto userDto;
+ 
+ 
 private int id;
  private String name;
  private String email;
